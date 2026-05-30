@@ -750,14 +750,34 @@ p {
   object-fit: cover;
 }
 
-.about-content h2 {
+.about-header-mobile {
+  display: block;
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.about-header-mobile .section-tag {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+}
+
+.about-header-desktop {
+  display: none;
+}
+
+.about-content h2,
+.about-header-mobile h2,
+.about-header-desktop h2 {
   font-size: clamp(1.6rem, 6vw, 2.3rem);
   margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 400;
 }
 
-.about-content h2 span {
+.about-content h2 span,
+.about-header-mobile h2 span,
+.about-header-desktop h2 span {
   color: var(--color-mint); /* Azul bebê para destacar "Fer" no escuro */
   font-style: italic;
 }
@@ -795,6 +815,10 @@ p {
   letter-spacing: 1px;
 }
 
+
+#metodo-tl {
+  background-color: #000000;
+}
 
 /* --- DOBRA 5: CURSO MTL (Dobra Escura Destaque Dourado) --- */
 .mtl-block {
@@ -1351,7 +1375,16 @@ p {
     flex: 1.1;
   }
   
+  .about-header-mobile {
+    display: none;
+  }
+  
+  .about-header-desktop {
+    display: block;
+  }
+  
   .about-content h2, 
+  .about-header-desktop h2,
   .about-signature {
     text-align: left;
   }
