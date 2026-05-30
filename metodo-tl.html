@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lista de Espera Oficial para o Método Terços Lucrativos de Fernanda Paim. Aprenda a faturar com artesanato religioso premium de casa.">
+  <meta name="author" content="Fernanda Paim">
+  <link rel="icon" type="image/png" href="kiwi/fav.png">
+  
+  <title>Método Terços Lucrativos | Lista de Espera Oficial</title>
+  
+  <!-- CSS Stylesheet (Reutiliza as variáveis e reset do site principal) -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  
+  <style>
+    /* Estilos Exclusivos para a Página do Teaser do Curso */
+    body {
+      background-color: var(--bg-dark-primary) !important;
+      color: var(--text-on-dark) !important;
+    }
+    
+    .teaser-section {
+      min-height: 100vh;
+      padding: 140px 0 80px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background-color: var(--bg-dark-primary);
+    }
+    
+    .teaser-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+      z-index: 10;
+    }
+    
+    .teaser-header {
+      margin-bottom: 3.5rem;
+    }
+    
+    .teaser-title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    
+    .teaser-title span {
+      color: var(--color-rose); /* Rosa chique da logo destacando */
+    }
+    
+    .teaser-subtitle {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      color: var(--text-on-dark-sub);
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 400;
+      line-height: 1.8;
+    }
+    
+    /* Grid de Benefícios */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 4.5rem;
+      text-align: left;
+    }
+    
+    .benefit-card {
+      background: var(--bg-dark-secondary);
+      border: 1px solid var(--border-dark);
+      padding: 2.2rem;
+      border-radius: 12px;
+      display: flex;
+      gap: 1.5rem;
+      transition: var(--transition-smooth);
+    }
+    
+    .benefit-card:hover {
+      border-color: var(--color-rose);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(198, 99, 119, 0.08);
+    }
+    
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(198, 99, 119, 0.08);
+      border: 1px solid rgba(198, 99, 119, 0.16);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-rose-pastel);
+      flex-shrink: 0;
+    }
+    
+    .benefit-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .benefit-title {
+      font-family: var(--font-title);
+      font-size: 1.05rem;
+      color: var(--text-on-dark);
+      font-weight: 600;
+    }
+    
+    .benefit-desc {
+      font-size: 0.95rem; /* Aumentado levemente */
+      color: var(--text-on-dark-sub);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    
+    /* Bloco do Formulário Interativo */
+    .waitlist-block {
+      background: var(--bg-dark-tertiary);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 3.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+    
+    .waitlist-block h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: var(--text-on-dark);
+    }
+    
+    .waitlist-block p {
+      color: var(--text-on-dark-sub);
+      font-size: 0.95rem; /* Aumentado levemente */
+      margin-bottom: 2.2rem;
+      font-weight: 400;
+    }
+    
+    .waitlist-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    
+    .form-group {
+      position: relative;
+      text-align: left;
+    }
+    
+    .form-input {
+      width: 100%;
+      background: var(--bg-dark-primary);
+      border: 1px solid var(--border-dark);
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      color: var(--text-on-dark);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      transition: var(--transition-fast);
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-rose);
+      box-shadow: 0 0 10px rgba(198, 99, 119, 0.15);
+    }
+    
+    /* Estado de Sucesso */
+    .success-message {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      animation: fadeIn 0.5s ease forwards;
+    }
+    
+    .success-icon {
+      font-size: 3.5rem;
+      color: var(--color-rose);
+    }
+    
+    .success-title {
+      font-family: var(--font-title);
+      font-size: 1.3rem;
+      color: var(--text-on-dark);
+    }
+    
+    .success-desc {
+      font-size: 0.88rem;
+      color: var(--text-on-dark-sub);
+      max-width: 400px;
+      line-height: 1.6;
+      text-align: center;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-on-dark-sub);
+      margin-top: 3.5rem;
+      transition: var(--transition-fast);
+    }
+    
+    .back-home:hover {
+      color: var(--color-rose-pastel) !important;
+      transform: translateX(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .waitlist-block {
+        padding: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- --- HEADER TRANSPARENTE --- -->
+  <header class="header-main" style="position: absolute;">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="logo-mimos.jpeg" alt="Mimos da Fer Logo" class="nav-logo-img">
+        <span class="logo-text">Mimos da <span>Fer</span></span>
+      </a>
+      <a href="index.html" class="back-home" style="margin-top: 0;">
+        <span class="material-icons-outlined">arrow_back</span> Voltar ao Site
+      </a>
+    </div>
+  </header>
+
+  <!-- --- CONTEÚDO PRINCIPAL --- -->
+  <section class="teaser-section">
+    <div class="teaser-container">
+      
+      <div class="teaser-header reveal">
+        <div class="section-logo-container" style="margin-bottom: 1.5rem;">
+          <img src="logo.jpeg" alt="Logo Método Terços Lucrativos" class="mtl-logo-img" style="border-radius: 8px;">
+        </div>
+        <div class="hero-tag" style="justify-content: center; margin-bottom: 1.2rem;">Método Terços Lucrativos</div>
+        <h1 class="teaser-title">O caminho para criar seu <span>próprio negócio</span> de artesanato em casa.</h1>
+        <p class="teaser-subtitle">
+          O primeiro infoproduto oficial da Mimos da Fer está em fase de preparação. Uma metodologia testada de mercado para ensinar você a criar peças religiosas sofisticadas sob medida e transformá-las em fonte contínua de renda.
+        </p>
+      </div>
+      
+      <!-- Grid de Benefícios -->
+      <div class="benefits-grid reveal delay-1">
+        
+        <!-- Card 1 -->
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <span class="material-icons-outlined">payments</span>
+          </div>
+          <div class="benefit-info">
+            <h3 class="benefit-title">Independência Financeira</h3>
+            <p class="benefit-desc">Descubra como faturar com o artesanato de fé premium, atendendo a uma demanda constante de casamentos, batizados e datas comemorativas.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <span class="material-icons-outlined">auto_awesome</span>
+          </div>
+          <div class="benefit-info">
+            <h3 class="benefit-title">Técnicas de Alto Padrão</h3>
+            <p class="benefit-desc">Aprenda o passo a passo da montagem de terços de noivas e acessórios com simetria impecável, metais nobres e embalagens encantadoras.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <span class="material-icons-outlined">campaign</span>
+          </div>
+          <div class="benefit-info">
+            <h3 class="benefit-title">Vendas Práticas</h3>
+            <p class="benefit-desc">Método descomplicado para atrair clientes dispostos a pagar o valor justo pelo seu trabalho manual, utilizando o Instagram e TikTok.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <span class="material-icons-outlined">diversity_3</span>
+          </div>
+          <div class="benefit-info">
+            <h3 class="benefit-title">Grupo & Mentoria VIP</h3>
+            <p class="benefit-desc">Não caminhe sozinha. Acesso direto a uma comunidade de artesãs religiosas motivadas e à experiência de mentoria direta da Fer.</p>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Bloco de Inscrição Interativa -->
+      <div class="waitlist-block reveal delay-2">
+        <div id="waitlist-form-wrapper">
+          <h3>Entre na Lista de Espera Oficial</h3>
+          <p>Garanta prioridade, bônus especiais e ofertas de lançamento exclusivas assim que as vagas forem abertas.</p>
+          
+          <form class="waitlist-form" id="course-waitlist-form">
+            <div class="form-group">
+              <input type="text" id="user-name" placeholder="Seu Nome Completo" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="user-email" placeholder="Seu Melhor E-mail" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="user-phone" placeholder="Seu WhatsApp com DDD (Ex: 46999999999)" class="form-input" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;" id="submit-waitlist-btn">
+              <span class="material-icons-outlined">check_circle</span> Quero Garantir Minha Vaga
+            </button>
+          </form>
+        </div>
+        
+        <!-- Estado de Sucesso -->
+        <div class="success-message" id="waitlist-success">
+          <span class="material-icons-outlined success-icon">verified</span>
+          <h3 class="success-title">Inscrição Confirmada!</h3>
+          <p class="success-desc">
+            Sua vaga na lista de espera exclusiva foi garantida. Agora, faça parte do nosso Grupo VIP no WhatsApp para receber novidades em primeira mão e conversar diretamente comigo!
+          </p>
+          <a href="https://api.whatsapp.com/send?phone=554699164921&text=Ol%C3%A1%2C%20Fer!%20Gostaria%20de%20entrar%20no%20grupo%20VIP%20de%20espera%20do%20M%C3%A9todo%20Ter%C3%A7os%20Lucrativos." target="_blank" class="btn btn-whatsapp" style="margin-top: 1rem; width: 100%;" id="vip-whatsapp-redirect">
+            <span class="material-icons-outlined">groups</span> Entrar no Grupo VIP do WhatsApp
+          </a>
+        </div>
+      </div>
+      
+      <a href="index.html" class="back-home" id="btn-back-bottom">
+        <span class="material-icons-outlined">arrow_back</span> Voltar à Página Principal
+      </a>
+
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer class="footer-main" style="padding: 3rem 0; text-align: center;">
+    <p style="font-size: 0.75rem; color: var(--text-secondary);">&copy; 2026 Mimos da Fer. Todos os direitos reservados. Método Terços Lucrativos.</p>
+  </footer>
+
+  <!-- Reutiliza a lógica de scroll reveal e transições básicas -->
+  <script src="script.js"></script>
+  <script>
+    // Comportamento interativo exclusivo da lista de espera
+    document.getElementById('course-waitlist-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Coleta dados e simula envio com micro-animação
+      const name = document.getElementById('user-name').value;
+      const email = document.getElementById('user-email').value;
+      const phone = document.getElementById('user-phone').value;
+      
+      // Armazena localmente para simular banco de dados da lista
+      const lead = { name, email, phone, timestamp: new Date().toISOString() };
+      localStorage.setItem('lead_mtl_' + Date.now(), JSON.stringify(lead));
+      
+      // Transição suave para o estado de sucesso
+      const formWrapper = document.getElementById('waitlist-form-wrapper');
+      const successWrapper = document.getElementById('waitlist-success');
+      
+      formWrapper.style.transition = 'opacity 0.4s ease';
+      formWrapper.style.opacity = '0';
+      
+      setTimeout(() => {
+        formWrapper.style.display = 'none';
+        successWrapper.style.display = 'flex';
+      }, 400);
+    });
+  </script>
+</body>
+</html>
