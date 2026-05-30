@@ -458,29 +458,31 @@ p {
 .ribbon-section {
   background-color: var(--color-rose-light); /* Lindo fundo rosa suave baseado na logo da Fer */
   border-bottom: 1px solid rgba(198, 99, 119, 0.15);
-  padding: 4rem 0;
+  padding: 3rem 0; /* ligeiramente reduzido para manter proporção no mobile */
   color: var(--text-on-light);
 }
 
 .ribbon-container {
   max-width: 800px; /* Centrado e compacto para grade 2x2 elegante no desktop */
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem; /* margem reduzida para dar mais espaço aos cards no mobile */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem; /* gap mais estreito para aproveitar melhor a largura em telas menores */
+  align-items: stretch; /* Garante que os cards da mesma linha fiquem com a mesma altura */
 }
 
 .ribbon-item {
   background-color: #FFFFFF;
   border: 1px solid rgba(198, 99, 119, 0.08);
   border-radius: 16px;
-  padding: 2.2rem 1.5rem;
+  padding: 1.8rem 0.8rem; /* padding horizontal reduzido para dar espaço ao texto */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 10px;
+  gap: 8px;
+  height: 100%; /* Força o card a preencher 100% da altura da linha da grade */
   box-shadow: 0 10px 25px rgba(198, 99, 119, 0.03);
   transition: var(--transition-smooth);
 }
@@ -492,24 +494,25 @@ p {
 }
 
 .ribbon-icon {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: var(--color-rose);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .ribbon-title {
   font-family: var(--font-title);
-  font-size: 1.1rem;
+  font-size: 0.95rem; /* Ajustado para caber o título em menos linhas */
   font-weight: 600;
   color: var(--text-on-light);
   letter-spacing: 0.5px;
+  line-height: 1.3;
 }
 
 .ribbon-desc {
-  font-size: 0.9rem;
+  font-size: 0.82rem; /* Compacto e legível no mobile */
   color: var(--text-on-light-sub);
   max-width: 100%;
-  line-height: 1.6;
+  line-height: 1.5;
   font-weight: 400;
 }
 
@@ -1360,7 +1363,27 @@ p {
   
   .ribbon-container {
     grid-template-columns: repeat(2, 1fr); /* Mantém a elegante grade 2x2 no desktop */
-    gap: 1.8rem;
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+  
+  .ribbon-item {
+    padding: 2.5rem 2rem;
+    gap: 12px;
+  }
+  
+  .ribbon-icon {
+    font-size: 2.4rem;
+    margin-bottom: 4px;
+  }
+  
+  .ribbon-title {
+    font-size: 1.15rem;
+  }
+  
+  .ribbon-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
   
   .portfolio-grid {
