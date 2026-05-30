@@ -458,47 +458,59 @@ p {
 .ribbon-section {
   background-color: var(--color-rose-light); /* Lindo fundo rosa suave baseado na logo da Fer */
   border-bottom: 1px solid rgba(198, 99, 119, 0.15);
-  padding: 2.8rem 0;
+  padding: 4rem 0;
   color: var(--text-on-light);
 }
 
 .ribbon-container {
-  max-width: 1200px;
+  max-width: 800px; /* Centrado e compacto para grade 2x2 elegante no desktop */
   margin: 0 auto;
   padding: 0 1.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.8rem;
+  gap: 1.5rem;
 }
 
 .ribbon-item {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(198, 99, 119, 0.08);
+  border-radius: 16px;
+  padding: 2.2rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 8px;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(198, 99, 119, 0.03);
+  transition: var(--transition-smooth);
+}
+
+.ribbon-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-rose);
+  box-shadow: 0 15px 30px rgba(198, 99, 119, 0.08);
 }
 
 .ribbon-icon {
-  font-size: 2rem; /* Ícones mais visíveis e imponentes */
-  color: var(--color-rose); /* Rosa marcante da logo */
-  margin-bottom: 2px;
+  font-size: 2.2rem;
+  color: var(--color-rose);
+  margin-bottom: 4px;
 }
 
 .ribbon-title {
   font-family: var(--font-title);
-  font-size: 1.15rem; /* Tipografia maior */
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-on-light);
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .ribbon-desc {
-  font-size: 0.92rem; /* Fonte ampliada para excelente legibilidade */
-  color: var(--text-on-light); /* Café escuro puro para máximo contraste */
-  max-width: 220px;
-  line-height: 1.5;
-  font-weight: 400; /* Garante que o texto se destaque perfeitamente */
+  font-size: 0.9rem;
+  color: var(--text-on-light-sub);
+  max-width: 100%;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 
@@ -1315,8 +1327,8 @@ p {
   }
   
   .ribbon-container {
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas horizontais */
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr); /* Mantém a elegante grade 2x2 no desktop */
+    gap: 1.8rem;
   }
   
   .portfolio-grid {
