@@ -892,6 +892,14 @@ p {
   100% { box-shadow: 0 0 0 0 rgba(198, 99, 119, 0); }
 }
 
+.mtl-logo-img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 @media (min-width: 768px) {
   .mtl-logo-img {
     margin: 0 0 1.5rem; /* Alinha à esquerda em telas maiores */
