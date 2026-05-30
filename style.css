@@ -728,7 +728,7 @@ p {
 .about-grid {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem; /* Reduzido de 3rem para 1.5rem no mobile para aproximar o conteúdo */
   align-items: center;
 }
 
@@ -756,7 +756,7 @@ p {
 .about-header-mobile {
   display: block;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem; /* Reduzido de 2rem para 0.5rem no mobile */
   width: 100%;
 }
 
