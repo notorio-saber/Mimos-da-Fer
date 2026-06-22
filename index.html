@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -487,18 +487,47 @@
   <section class="section section-dark" id="metodo-tl" style="border-top: none;">
     <div class="container">
       
-      <!-- Cabeçalho Centrado de Alta Elegância -->
-      <div class="section-header reveal">
-        <div class="section-logo-container" style="margin-bottom: 1.5rem;">
-          <img src="logo.jpeg" alt="Logo Método Terços Lucrativos" class="mtl-section-logo" style="max-width: 280px; height: auto; display: block; margin: 0 auto; border-radius: 8px;">
+      <style>
+        .tl-two-columns {
+          display: flex;
+          align-items: center;
+          gap: 3rem;
+          text-align: left;
+          margin-bottom: 3rem;
+        }
+        .tl-text-col {
+          flex: 1;
+          min-width: 300px;
+        }
+        .tl-img-col {
+          flex: 1;
+          min-width: 300px;
+        }
+        @media (max-width: 768px) {
+          .tl-two-columns {
+            flex-direction: column;
+            text-align: center;
+          }
+          .tl-text-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      </style>
+      <div class="tl-two-columns reveal">
+        <div class="tl-text-col">
+          <div class="section-logo-container" style="margin-bottom: 1.5rem;">
+            <img src="logo.jpeg" alt="Logo Método Terços Lucrativos" class="mtl-section-logo" style="max-width: 250px; height: auto; display: block; border-radius: 8px;">
+          </div>
+          <span class="section-tag" style="justify-content: flex-start; margin-bottom: 1rem; display: inline-flex;">Em Breve: Primeiro Infoproduto</span>
+          <h2 class="section-title" style="text-align: left;">Aprenda a transformar sua <span>criatividade em renda</span>.</h2>
+          <p class="section-subtitle" style="margin: 0; max-width: 100%;">
+            O <strong>Método Terços Lucrativos</strong> foi desenvolvido para guiar mulheres que desejam transformar o artesanato religioso em um negócio lucrativo trabalhando no conforto de seu lar. Aprenda o passo a passo completo, desde as técnicas de montagem perfeita até a precificação, divulgação e vendas.
+          </p>
         </div>
-        <span class="section-tag">Em Breve: Primeiro Infoproduto</span>
-        <h2 class="section-title">Aprenda a transformar sua <span>criatividade em renda</span>.</h2>
-        <p class="section-subtitle" style="max-width: 750px; margin: 0 auto;">
-          O <strong>Método Terços Lucrativos</strong> foi desenvolvido para guiar mulheres que desejam transformar o artesanato religioso em um negócio lucrativo trabalhando no conforto de seu lar. Aprenda o passo a passo completo, desde as técnicas de montagem perfeita até a precificação, divulgação e vendas.
-        </p>
-        <div style="margin-top: 2rem;">
-          <img src="img/IMG_7998.jpg" alt="Fernanda Paim Método TL" style="width: 100%; max-width: 600px; height: auto; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin: 0 auto; display: block;">
+        <div class="tl-img-col">
+          <img src="img/415e8209.jpg" alt="Fernanda Paim Método TL" style="width: 100%; max-width: 500px; height: auto; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: block; margin: 0 auto;">
         </div>
       </div>
 
