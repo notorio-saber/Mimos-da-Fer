@@ -264,17 +264,47 @@
   <section class="teaser-section">
     <div class="teaser-container">
       
-      <div class="teaser-header reveal">
-        <div class="section-logo-container" style="margin-bottom: 1.5rem;">
-          <img src="logo.jpeg" alt="Logo Método Terços Lucrativos" class="mtl-logo-img" style="border-radius: 8px;">
+      <style>
+        .teaser-two-columns {
+          display: flex;
+          align-items: center;
+          gap: 4rem;
+          text-align: left;
+          margin-bottom: 4rem;
+        }
+        .teaser-text-col {
+          flex: 1;
+          min-width: 300px;
+        }
+        .teaser-img-col {
+          flex: 1;
+          min-width: 300px;
+        }
+        @media (max-width: 768px) {
+          .teaser-two-columns {
+            flex-direction: column;
+            text-align: center;
+          }
+          .teaser-text-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      </style>
+      <div class="teaser-two-columns reveal">
+        <div class="teaser-text-col">
+          <div class="section-logo-container" style="margin-bottom: 1.5rem;">
+            <img src="logo.jpeg" alt="Logo Método Terços Lucrativos" class="mtl-logo-img" style="border-radius: 8px;">
+          </div>
+          <div class="hero-tag" style="justify-content: center; margin-bottom: 1.2rem; display: inline-flex;">Método Terços Lucrativos</div>
+          <h1 class="teaser-title" style="margin-bottom: 1.5rem; line-height: 1.2;">O caminho para criar seu <span>próprio negócio</span> de artesanato em casa.</h1>
+          <p class="teaser-subtitle" style="margin: 0; max-width: 100%;">
+            O primeiro infoproduto oficial da Mimos da Fer está em fase de preparação. Uma metodologia testada de mercado para ensinar você a criar peças religiosas sofisticadas sob medida e transformá-las em fonte contínua de renda.
+          </p>
         </div>
-        <div class="hero-tag" style="justify-content: center; margin-bottom: 1.2rem;">Método Terços Lucrativos</div>
-        <h1 class="teaser-title">O caminho para criar seu <span>próprio negócio</span> de artesanato em casa.</h1>
-        <p class="teaser-subtitle">
-          O primeiro infoproduto oficial da Mimos da Fer está em fase de preparação. Uma metodologia testada de mercado para ensinar você a criar peças religiosas sofisticadas sob medida e transformá-las em fonte contínua de renda.
-        </p>
-        <div style="margin-top: 2rem;">
-          <img src="img/IMG_7985.jpg" alt="Fernanda Paim Método TL" style="width: 100%; max-width: 700px; height: auto; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); margin: 0 auto; display: block;">
+        <div class="teaser-img-col">
+          <img src="img/415e8209.jpg" alt="Fernanda Paim Método TL" style="width: 100%; max-width: 500px; height: auto; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.5); display: block; margin: 0 auto;">
         </div>
       </div>
       
