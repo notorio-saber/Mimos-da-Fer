@@ -13,3 +13,14 @@ desktop.ini
 
 # System Files
 .DS_Store
+
+# Ignore large videos and original photos folder
+Fotos do iCloud de Fernanda Cardoso/
+fotos fer/
+*.mov
+*.MOV
+*.mp4
+*.MP4
+push.bat
+push_error.txt
+resize.ps1
