@@ -3,441 +3,858 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lista de Espera Oficial para o Método Terços Lucrativos de Fernanda Paim. Aprenda a faturar com artesanato religioso premium de casa.">
+  <meta name="description" content="Método Terços Lucrativos da Mimos da Fer. Aprenda a produzir terços, nó franciscano, prendedores e peças religiosas com suporte da Fer.">
   <meta name="author" content="Fernanda Paim">
+  <meta property="og:title" content="Método Terços Lucrativos | Mimos da Fer">
+  <meta property="og:description" content="Curso liberado por R$ 39,90 com módulos, bônus e suporte direto da Fer.">
+  <meta property="og:image" content="kiwi/banner.png">
   <link rel="icon" type="image/png" href="kiwi/fav.png">
-  
-  <title>Método Terços Lucrativos | Lista de Espera Oficial</title>
-  
-  <!-- CSS Stylesheet (Reutiliza as variáveis e reset do site principal) -->
+  <title>Método Terços Lucrativos | Curso Liberado</title>
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Google Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-  
   <style>
-    /* Estilos Exclusivos para a Página do Teaser do Curso */
     body {
-      background-color: var(--bg-dark-primary) !important;
+      background: #0d0a0a !important;
       color: var(--text-on-dark) !important;
     }
-    
-    .mtl-logo-img {
-      max-width: 280px !important;
-      width: 100% !important;
-      height: auto !important;
-      display: block !important;
-      margin: 0 auto 1.5rem !important;
-      border-radius: 8px;
+
+    .lp-page {
+      background: #0d0a0a;
+      overflow: hidden;
     }
-    
-    .teaser-section {
-      min-height: 100vh;
-      padding: 140px 0 80px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      background-color: var(--bg-dark-primary);
+
+    .lp-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(13, 10, 10, 0.9);
+      border-bottom: 1px solid rgba(252, 250, 246, 0.08);
+      backdrop-filter: blur(14px);
     }
-    
-    .teaser-container {
-      max-width: 900px;
+
+    .lp-nav .nav-container {
+      padding: 0.72rem 1.2rem;
+    }
+
+    .lp-container {
+      width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 0 2rem;
-      text-align: center;
-      z-index: 10;
     }
-    
-    .teaser-header {
-      margin-bottom: 3.5rem;
+
+    .lp-hero {
+      padding: clamp(3.6rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 5rem);
+      background:
+        linear-gradient(125deg, rgba(198, 99, 119, 0.14), transparent 38%),
+        radial-gradient(circle at 82% 12%, rgba(180, 219, 220, 0.12), transparent 24%),
+        #0d0a0a;
     }
-    
-    .teaser-title {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
-    
-    .teaser-title span {
-      color: var(--color-rose); /* Rosa chique da logo destacando */
-    }
-    
-    .teaser-subtitle {
-      font-size: clamp(0.95rem, 2vw, 1.15rem);
-      color: var(--text-on-dark-sub);
-      max-width: 700px;
-      margin: 0 auto;
-      font-weight: 400;
-      line-height: 1.8;
-    }
-    
-    /* Grid de Benefícios */
-    .benefits-grid {
+
+    .lp-hero-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin-bottom: 4.5rem;
-      text-align: left;
-    }
-    
-    .benefit-card {
-      background: var(--bg-dark-secondary);
-      border: 1px solid var(--border-dark);
-      padding: 2.2rem;
-      border-radius: 12px;
-      display: flex;
-      gap: 1.5rem;
-      transition: var(--transition-smooth);
-    }
-    
-    .benefit-card:hover {
-      border-color: var(--color-rose);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(198, 99, 119, 0.08);
-    }
-    
-    .benefit-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(198, 99, 119, 0.08);
-      border: 1px solid rgba(198, 99, 119, 0.16);
-      border-radius: 50%;
-      display: flex;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.78fr);
+      gap: clamp(2rem, 5vw, 4rem);
       align-items: center;
-      justify-content: center;
-      color: var(--color-rose-pastel);
-      flex-shrink: 0;
     }
-    
-    .benefit-info {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    
-    .benefit-title {
-      font-family: var(--font-title);
-      font-size: 1.05rem;
-      color: var(--text-on-dark);
-      font-weight: 600;
-    }
-    
-    .benefit-desc {
-      font-size: 0.95rem; /* Aumentado levemente */
-      color: var(--text-on-dark-sub);
-      font-weight: 400;
-      line-height: 1.6;
-    }
-    
-    /* Bloco do Formulário Interativo */
-    .waitlist-block {
-      background: var(--bg-dark-tertiary);
-      border: 1px solid var(--border-dark);
-      border-radius: 12px;
-      padding: 3.5rem;
-      max-width: 600px;
-      margin: 0 auto;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-      position: relative;
-    }
-    
-    .waitlist-block h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
-      color: var(--text-on-dark);
-    }
-    
-    .waitlist-block p {
-      color: var(--text-on-dark-sub);
-      font-size: 0.95rem; /* Aumentado levemente */
-      margin-bottom: 2.2rem;
-      font-weight: 400;
-    }
-    
-    .waitlist-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-    
-    .form-group {
-      position: relative;
-      text-align: left;
-    }
-    
-    .form-input {
-      width: 100%;
-      background: var(--bg-dark-primary);
-      border: 1px solid var(--border-dark);
-      padding: 1rem 1.2rem;
+
+    .lp-logo {
+      width: min(230px, 72vw);
       border-radius: 8px;
-      color: var(--text-on-dark);
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      transition: var(--transition-fast);
+      margin-bottom: 1.25rem;
+      display: block;
     }
-    
-    .form-input:focus {
-      outline: none;
-      border-color: var(--color-rose);
-      box-shadow: 0 0 10px rgba(198, 99, 119, 0.15);
-    }
-    
-    /* Estado de Sucesso */
-    .success-message {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.2rem;
-      animation: fadeIn 0.5s ease forwards;
-    }
-    
-    .success-icon {
-      font-size: 3.5rem;
-      color: var(--color-rose);
-    }
-    
-    .success-title {
-      font-family: var(--font-title);
-      font-size: 1.3rem;
-      color: var(--text-on-dark);
-    }
-    
-    .success-desc {
-      font-size: 0.88rem;
-      color: var(--text-on-dark-sub);
-      max-width: 400px;
-      line-height: 1.6;
-      text-align: center;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .back-home {
+
+    .lp-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.8rem;
+      padding: 0.46rem 0.86rem;
+      border: 1px solid rgba(228, 163, 176, 0.3);
+      border-radius: 999px;
+      background: rgba(198, 99, 119, 0.12);
+      color: var(--color-rose-pastel);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      margin-bottom: 1.05rem;
+    }
+
+    .lp-title {
+      max-width: 620px;
+      font-family: var(--font-title);
+      font-size: clamp(2.15rem, 4.8vw, 3.9rem);
+      line-height: 1.04;
+      letter-spacing: 0;
+      margin-bottom: 1.1rem;
+    }
+
+    .lp-title span {
+      color: var(--color-rose-pastel);
+    }
+
+    .lp-copy {
+      max-width: 670px;
       color: var(--text-on-dark-sub);
-      margin-top: 3.5rem;
-      transition: var(--transition-fast);
+      font-size: clamp(1rem, 1.4vw, 1.1rem);
+      line-height: 1.72;
+      margin-bottom: 1.35rem;
     }
-    
-    .back-home:hover {
-      color: var(--color-rose-pastel) !important;
-      transform: translateX(-3px);
+
+    .lp-offer-row {
+      display: flex;
+      gap: 0.9rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 1rem 0 1.25rem;
     }
-    
-    @media (max-width: 768px) {
-      .benefits-grid {
+
+    .lp-price {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.78rem 0.95rem;
+      border-radius: 8px;
+      border: 1px solid rgba(228, 163, 176, 0.25);
+      background: rgba(252, 250, 246, 0.05);
+    }
+
+    .lp-price small {
+      color: var(--text-on-dark-sub);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .lp-price strong {
+      font-family: var(--font-title);
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      line-height: 1;
+      color: #fff;
+    }
+
+    .lp-note {
+      max-width: 280px;
+      color: var(--color-mint);
+      font-size: 0.94rem;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    .lp-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .lp-actions .btn {
+      min-height: 50px;
+    }
+
+    .lp-safe {
+      margin-top: 0.85rem;
+      color: rgba(252, 250, 246, 0.62);
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+
+    .lp-visual {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .lp-photo {
+      height: min(52vw, 460px);
+      min-height: 340px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(252, 250, 246, 0.1);
+      box-shadow: 0 24px 58px rgba(0, 0, 0, 0.36);
+      background: #141010;
+    }
+
+    .lp-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .lp-mini-card {
+      display: none !important;
+      border-radius: 8px;
+      border: 1px solid rgba(198, 99, 119, 0.18);
+      background: var(--bg-light-primary);
+      color: var(--text-on-light);
+      padding: 0.85rem;
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .lp-mini-card img {
+      width: 108px;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .lp-mini-card strong {
+      display: block;
+      font-family: var(--font-title);
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .lp-mini-card span {
+      color: var(--text-on-light-sub);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .lp-section {
+      padding: clamp(3.4rem, 7vw, 5.8rem) 0;
+    }
+
+    .lp-section.light {
+      background: var(--bg-light-primary);
+      color: var(--text-on-light);
+    }
+
+    .lp-header {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .lp-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.75rem;
+      color: var(--color-rose);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .lp-section-title {
+      font-family: var(--font-title);
+      font-size: clamp(1.85rem, 3.5vw, 3rem);
+      line-height: 1.12;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0;
+    }
+
+    .lp-section-title span {
+      color: var(--color-rose);
+    }
+
+    .lp-section-copy {
+      color: var(--text-on-light-sub);
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .lp-dark-copy {
+      color: var(--text-on-dark-sub);
+    }
+
+    .lp-benefits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .lp-benefit {
+      min-height: 176px;
+      border-radius: 8px;
+      border: 1px solid rgba(198, 99, 119, 0.14);
+      background: #fff;
+      padding: 1.25rem;
+    }
+
+    .lp-benefit .material-icons-outlined {
+      color: var(--color-rose);
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .lp-benefit h3,
+    .lp-bonus h3,
+    .lp-lesson h3 {
+      font-family: var(--font-title);
+      font-size: 1.02rem;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0;
+    }
+
+    .lp-benefit p,
+    .lp-bonus p {
+      color: var(--text-on-light-sub);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .lp-modules {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+
+    .lp-module {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(252, 250, 246, 0.12);
+      background: rgba(252, 250, 246, 0.04);
+    }
+
+    .lp-module img {
+      width: 100%;
+      aspect-ratio: 2 / 2.65;
+      object-fit: cover;
+      display: block;
+      background: #141010;
+    }
+
+    .lp-module-body {
+      min-height: 98px;
+      padding: 0.95rem;
+    }
+
+    .lp-module small {
+      color: var(--color-rose-pastel);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .lp-module h3 {
+      color: #fff;
+      font-family: var(--font-title);
+      font-size: 1rem;
+      line-height: 1.25;
+      margin-top: 0.3rem;
+      letter-spacing: 0;
+    }
+
+    .lp-lessons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .lp-lesson {
+      border-radius: 8px;
+      border: 1px solid rgba(252, 250, 246, 0.1);
+      background: rgba(252, 250, 246, 0.035);
+      padding: 1.15rem;
+    }
+
+    .lp-lesson h3 {
+      color: #fff;
+    }
+
+    .lp-lesson ul {
+      display: grid;
+      gap: 0.48rem;
+      color: var(--text-on-dark-sub);
+      font-size: 0.92rem;
+      line-height: 1.48;
+    }
+
+    .lp-lesson li {
+      display: flex;
+      gap: 0.45rem;
+    }
+
+    .lp-lesson li::before {
+      content: "check";
+      font-family: "Material Icons Outlined";
+      color: var(--color-mint);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .lp-support {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .lp-support-img {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(198, 99, 119, 0.18);
+      background: #fff;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.14);
+    }
+
+    .lp-support-img img {
+      width: 100%;
+      display: block;
+    }
+
+    .lp-support-text {
+      border-radius: 8px;
+      border: 1px solid rgba(198, 99, 119, 0.16);
+      background: #fff;
+      padding: clamp(1.4rem, 3vw, 2.4rem);
+    }
+
+    .lp-support-text p {
+      color: var(--text-on-light-sub);
+      line-height: 1.72;
+      margin-bottom: 0.9rem;
+    }
+
+    .lp-bonuses {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .lp-bonus {
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid rgba(198, 99, 119, 0.14);
+      padding: 1.25rem;
+    }
+
+    .lp-final {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid rgba(228, 163, 176, 0.22);
+      background: rgba(252, 250, 246, 0.05);
+      padding: clamp(1.5rem, 4vw, 2.7rem);
+      box-shadow: 0 22px 58px rgba(0, 0, 0, 0.3);
+    }
+
+    .lp-final .lp-price {
+      margin: 0.65rem auto 1rem;
+    }
+
+    .lp-sticky {
+      display: none;
+      position: fixed;
+      left: 50%;
+      bottom: 14px;
+      transform: translateX(-50%);
+      z-index: 50;
+      width: min(520px, calc(100% - 24px));
+      padding: 0.55rem;
+      border-radius: 8px;
+      border: 1px solid rgba(228, 163, 176, 0.24);
+      background: rgba(13, 10, 10, 0.92);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.42);
+    }
+
+    .lp-sticky .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    @media (max-width: 980px) {
+      .lp-hero-grid,
+      .lp-support {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
       }
-      
-      .waitlist-block {
-        padding: 2.2rem;
+
+      .lp-visual {
+        max-width: 620px;
+        margin: 0 auto;
       }
+
+      .lp-benefits,
+      .lp-modules {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .lp-modules .lp-module:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .lp-nav .logo-text {
+        display: none;
+      }
+
+      .lp-hero {
+        padding-top: 2.4rem;
+      }
+
+      .lp-photo {
+        height: 360px;
+        min-height: 360px;
+      }
+
+      .lp-mini-card {
+      display: none !important;
+        grid-template-columns: 88px 1fr;
+      }
+
+      .lp-mini-card img {
+        width: 88px;
+      }
+
+      .lp-benefits,
+      .lp-modules,
+      .lp-lessons,
+      .lp-bonuses {
+        grid-template-columns: 1fr;
+      }
+
+      .lp-modules .lp-module:last-child {
+        grid-column: auto;
+      }
+
+      .lp-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .lp-sticky {
+        display: block;
+      }
+    }
+  
+    /* UX polish: primeira dobra compacta e orientada a conversao */
+    .lp-page h1,
+    .lp-page h2,
+    .lp-page h3 {
+      text-transform: none !important;
+      letter-spacing: 0 !important;
+    }
+
+    .lp-hero {
+      padding: clamp(2.4rem, 5vw, 4rem) 0 clamp(2.5rem, 5vw, 4rem) !important;
+    }
+
+    .lp-hero-grid {
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 420px) !important;
+      gap: clamp(2rem, 4vw, 3.2rem) !important;
+      align-items: center !important;
+    }
+
+    .lp-logo {
+      width: min(170px, 58vw) !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .lp-pill {
+      font-size: 0.66rem !important;
+      padding: 0.4rem 0.78rem !important;
+      margin-bottom: 0.9rem !important;
+    }
+
+    .lp-title {
+      max-width: 600px !important;
+      font-size: clamp(1.95rem, 3.5vw, 3rem) !important;
+      line-height: 1.12 !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .lp-copy {
+      max-width: 610px !important;
+      font-size: clamp(0.96rem, 1.1vw, 1.04rem) !important;
+      line-height: 1.66 !important;
+      margin-bottom: 1.15rem !important;
+    }
+
+    .lp-offer-row {
+      margin: 0.95rem 0 1.2rem !important;
+      gap: 0.85rem !important;
+    }
+
+    .lp-price {
+      padding: 0.65rem 0.85rem !important;
+    }
+
+    .lp-price strong {
+      font-size: clamp(1.7rem, 2.7vw, 2.25rem) !important;
+    }
+
+    .lp-note {
+      max-width: 250px !important;
+      font-size: 0.88rem !important;
+    }
+
+    .lp-visual {
+      display: block !important;
+    }
+
+    .lp-photo {
+      height: clamp(300px, 34vw, 410px) !important;
+      min-height: 0 !important;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.34) !important;
+    }
+
+    .lp-photo img {
+      object-position: center !important;
+    }
+
+    .lp-mini-card {
+      display: none !important;
+    }
+
+    @media (max-width: 980px) {
+      .lp-hero-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .lp-title,
+      .lp-copy {
+        max-width: 720px !important;
+      }
+      .lp-visual {
+        max-width: 520px !important;
+        margin: 0 auto !important;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .lp-title {
+        font-size: clamp(1.85rem, 9vw, 2.45rem) !important;
+      }
+      .lp-photo {
+        height: 320px !important;
+        min-height: 0 !important;
+      }
+    }
+
+    .lp-intro-band {
+      padding: clamp(3rem, 6vw, 4.8rem) 0;
+      background: var(--bg-light-primary);
+      color: var(--text-on-light);
+      border-top: 1px solid rgba(198, 99, 119, 0.12);
+      border-bottom: 1px solid rgba(198, 99, 119, 0.12);
+    }
+
+    .lp-intro-text {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: var(--font-title);
+      font-size: clamp(1.45rem, 2.6vw, 2.45rem);
+      line-height: 1.34;
+      color: var(--text-on-light);
+      text-transform: none !important;
+      letter-spacing: 0 !important;
+    }
+
+    .lp-intro-text span {
+      color: var(--color-rose);
+    }
+
+    .lp-rosary-carousel {
+      position: relative;
+      height: clamp(340px, 38vw, 470px);
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba(252, 250, 246, 0.12);
+      background: #141010;
+      box-shadow: 0 22px 54px rgba(0, 0, 0, 0.36);
+    }
+    .lp-rosary-track { display: flex; height: 100%; animation: lpHeroSlide 28s infinite ease-in-out; }
+    .lp-rosary-slide { min-width: 100%; height: 100%; position: relative; }
+    .lp-rosary-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lp-rosary-slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(13, 10, 10, 0.58), transparent 48%); pointer-events: none; }
+    .lp-rosary-caption { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; z-index: 2; color: #fff; font-size: 0.82rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    @keyframes lpHeroSlide { 0%, 17% { transform: translateX(0); } 20%, 37% { transform: translateX(-100%); } 40%, 57% { transform: translateX(-200%); } 60%, 77% { transform: translateX(-300%); } 80%, 97% { transform: translateX(-400%); } 100% { transform: translateX(0); } }
+
+    .lp-gallery-band { padding: clamp(3rem, 6vw, 5rem) 0; background: #0d0a0a; border-top: 1px solid rgba(252, 250, 246, 0.08); border-bottom: 1px solid rgba(252, 250, 246, 0.08); overflow: hidden; }
+    .lp-gallery-head { width: min(1120px, calc(100% - 32px)); margin: 0 auto 1.6rem; display: flex; align-items: end; justify-content: space-between; gap: 1.5rem; }
+    .lp-gallery-head h2 { max-width: 620px; color: #fff; font-family: var(--font-title); font-size: clamp(1.8rem, 3vw, 2.55rem); line-height: 1.14; text-transform: none !important; letter-spacing: 0 !important; }
+    .lp-gallery-head p { max-width: 360px; color: var(--text-on-dark-sub); line-height: 1.6; font-size: 0.96rem; }
+    .lp-marquee { display: flex; gap: 1rem; width: max-content; animation: lpMarqueeLeft 46s linear infinite; margin-bottom: 1rem; }
+    .lp-marquee.reverse { animation-name: lpMarqueeRight; transform: translateX(-50%); }
+    .lp-marquee-item { width: clamp(220px, 24vw, 330px); aspect-ratio: 4 / 5; border-radius: 8px; overflow: hidden; border: 1px solid rgba(252, 250, 246, 0.12); background: #141010; box-shadow: 0 16px 34px rgba(0, 0, 0, 0.25); flex: 0 0 auto; }
+    .lp-marquee-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .lp-marquee-item:hover img { transform: scale(1.04); }
+    @keyframes lpMarqueeLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes lpMarqueeRight { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+    @media (max-width: 760px) { .lp-gallery-head { display: block; } .lp-gallery-head p { margin-top: 0.75rem; } .lp-rosary-carousel { height: 360px; } }
+
+    .lp-gallery-band.lp-gallery-lower {
+      background: var(--bg-light-primary);
+      border-top: 1px solid rgba(198, 99, 119, 0.12);
+      border-bottom: 1px solid rgba(198, 99, 119, 0.12);
+    }
+
+    .lp-gallery-band.lp-gallery-lower .lp-marquee {
+      margin-bottom: 0;
     }
   </style>
 </head>
 <body>
+  <main class="lp-page">
+    <header class="lp-nav">
+      <nav class="nav-container">
+        <a href="index.html" class="logo-link">
+          <img src="logo-mimos.jpeg" alt="Mimos da Fer Logo" class="nav-logo-img">
+          <span class="logo-text">Mimos da <span>Fer</span></span>
+        </a>
+        <a href="index.html" class="back-home" style="margin-top: 0;">
+          <span class="material-icons-outlined">arrow_back</span> Voltar ao site
+        </a>
+      </nav>
+    </header>
 
-  <!-- --- HEADER TRANSPARENTE --- -->
-  <header class="header-main" style="position: absolute;">
-    <div class="nav-container">
-      <a href="index.html" class="logo-link">
-        <img src="logo-mimos.jpeg" alt="Mimos da Fer Logo" class="nav-logo-img">
-        <span class="logo-text">Mimos da <span>Fer</span></span>
-      </a>
-      <a href="index.html" class="back-home" style="margin-top: 0;">
-        <span class="material-icons-outlined">arrow_back</span> Voltar ao Site
-      </a>
-    </div>
-  </header>
-
-  <!-- --- CONTEÚDO PRINCIPAL --- -->
-  <section class="teaser-section">
-    <div class="teaser-container">
-      
-      <style>
-        .teaser-two-columns {
-          display: flex;
-          align-items: center;
-          gap: 4rem;
-          text-align: left;
-          margin-bottom: 4rem;
-        }
-        .teaser-text-col {
-          flex: 1;
-          min-width: 300px;
-        }
-        .teaser-img-col {
-          flex: 1;
-          min-width: 300px;
-        }
-        @media (max-width: 768px) {
-          .teaser-two-columns {
-            flex-direction: column;
-            text-align: center;
-          }
-          .teaser-text-col {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-        }
-      </style>
-      <div class="teaser-two-columns reveal">
-        <div class="teaser-text-col">
-          <div class="section-logo-container" style="margin-bottom: 1.5rem;">
-            <img src="logo.jpeg" alt="Logo Método Terços Lucrativos" class="mtl-logo-img" style="border-radius: 8px;">
+    <section class="lp-hero">
+      <div class="lp-container lp-hero-grid">
+        <div class="reveal">
+          <img class="lp-logo" src="logo.jpeg" alt="Método Terços Lucrativos">
+          <span class="lp-pill"><span class="material-icons-outlined">celebration</span> Curso liberado</span>
+          <h1 class="lp-title">Aprenda a criar terços artesanais com acabamento bonito e suporte da Fer.</h1>
+          <div class="lp-offer-row">
+            <div class="lp-price"><small>Lançamento</small><strong>R$ 39,90</strong></div>
+            <p class="lp-note">Acesso ao curso + grupo de suporte com acompanhamento da Fer.</p>
           </div>
-          <div class="hero-tag" style="justify-content: center; margin-bottom: 1.2rem; display: inline-flex;">Método Terços Lucrativos</div>
-          <h1 class="teaser-title" style="margin-bottom: 1.5rem; line-height: 1.2;">O caminho para criar seu <span>próprio negócio</span> de artesanato em casa.</h1>
-          <p class="teaser-subtitle" style="margin: 0; max-width: 100%;">
-            O primeiro infoproduto oficial da Mimos da Fer está em fase de preparação. Uma metodologia testada de mercado para ensinar você a criar peças religiosas sofisticadas sob medida e transformá-las em fonte contínua de renda.
-          </p>
+          <div class="lp-actions">
+            <a href="https://pay.kiwify.com.br/PGA4mul" target="_blank" rel="noopener" class="btn btn-primary"><span class="material-icons-outlined">shopping_bag</span> Garantir minha vaga</a>
+            <a href="#conteudo" class="btn btn-secondary"><span class="material-icons-outlined">play_lesson</span> Ver módulos</a>
+          </div>
+          <p class="lp-safe">Compra segura pela Kiwify. Depois da compra, você acessa as aulas e entra na jornada com as alunas da Fer.</p>
         </div>
-        <div class="teaser-img-col">
-          <img src="img/415e8209.jpg" alt="Fernanda Paim Método TL" style="width: 100%; max-width: 500px; height: auto; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.5); display: block; margin: 0 auto;">
+        <div class="lp-visual reveal delay-2">
+          <div class="lp-rosary-carousel" aria-label="Fotos de terços feitos pela Mimos da Fer">
+            <div class="lp-rosary-track">
+              <div class="lp-rosary-slide"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.07.jpeg" alt="Terço artesanal com pérolas"><span class="lp-rosary-caption">Terços artesanais</span></div>
+              <div class="lp-rosary-slide"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.08.jpeg" alt="Terço religioso personalizado"><span class="lp-rosary-caption">Peças de fé</span></div>
+              <div class="lp-rosary-slide"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.06.jpeg" alt="Terço dourado personalizado"><span class="lp-rosary-caption">Acabamento delicado</span></div>
+              <div class="lp-rosary-slide"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.40.46.jpeg" alt="Rosário artesanal"><span class="lp-rosary-caption">Modelos para inspirar</span></div>
+              <div class="lp-rosary-slide"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.11 (3).jpeg" alt="Terço premium com cristais"><span class="lp-rosary-caption">Aprenda na prática</span></div>
+            </div>
+          </div>
         </div>
       </div>
-      
-      <!-- Grid de Benefícios -->
-      <div class="benefits-grid reveal delay-1">
-        
-        <!-- Card 1 -->
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <span class="material-icons-outlined">payments</span>
-          </div>
-          <div class="benefit-info">
-            <h3 class="benefit-title">Independência Financeira</h3>
-            <p class="benefit-desc">Descubra como faturar com o artesanato de fé premium, atendendo a uma demanda constante de casamentos, batizados e datas comemorativas.</p>
-          </div>
-        </div>
+    </section>
 
-        <!-- Card 2 -->
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <span class="material-icons-outlined">auto_awesome</span>
-          </div>
-          <div class="benefit-info">
-            <h3 class="benefit-title">Técnicas de Alto Padrão</h3>
-            <p class="benefit-desc">Aprenda o passo a passo da montagem de terços de noivas e acessórios com simetria impecável, metais nobres e embalagens encantadoras.</p>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <span class="material-icons-outlined">campaign</span>
-          </div>
-          <div class="benefit-info">
-            <h3 class="benefit-title">Vendas Práticas</h3>
-            <p class="benefit-desc">Método descomplicado para atrair clientes dispostos a pagar o valor justo pelo seu trabalho manual, utilizando o Instagram e TikTok.</p>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <span class="material-icons-outlined">diversity_3</span>
-          </div>
-          <div class="benefit-info">
-            <h3 class="benefit-title">Grupo & Mentoria VIP</h3>
-            <p class="benefit-desc">Não caminhe sozinha. Acesso direto a uma comunidade de artesãs religiosas motivadas e à experiência de mentoria direta da Fer.</p>
-          </div>
-        </div>
-
+    
+    
+    <section class="lp-gallery-band" aria-label="Galeria de terços">
+      <div class="lp-marquee">
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.07.jpeg" alt="Terço artesanal"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.08.jpeg" alt="Terço de devoção"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.06.jpeg" alt="Terço dourado"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.40.46.jpeg" alt="Rosário artesanal"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.11 (3).jpeg" alt="Terço delicado"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.07 (2).jpeg" alt="Terço com entremeio"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.07.jpeg" alt="Terço artesanal"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.08.jpeg" alt="Terço de devoção"></div>
       </div>
       
-      <!-- Bloco de Inscrição Interativa -->
-      <div class="waitlist-block reveal delay-2">
-        <div id="waitlist-form-wrapper">
-          <h3>Entre na Lista de Espera Oficial</h3>
-          <p>Garanta prioridade, bônus especiais e ofertas de lançamento exclusivas assim que as vagas forem abertas.</p>
-          
-          <form class="waitlist-form" id="course-waitlist-form">
-            <div class="form-group">
-              <input type="text" id="user-name" placeholder="Seu Nome Completo" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <input type="email" id="user-email" placeholder="Seu Melhor E-mail" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <input type="tel" id="user-phone" placeholder="Seu WhatsApp com DDD (Ex: 46999999999)" class="form-input" required>
-            </div>
-            
-            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;" id="submit-waitlist-btn">
-              <span class="material-icons-outlined">check_circle</span> Quero Garantir Minha Vaga
-            </button>
-          </form>
+    </section>
+    <section class="lp-intro-band">
+      <div class="lp-container">
+        <p class="lp-intro-text">A mentoria <span>Método Terços Lucrativos</span> já está disponível para quem quer transformar o artesanato religioso em renda extra, começar um novo negócio ou aprender um hobby com significado.</p>
+      </div>
+    </section>
+    <section class="lp-section light">
+      <div class="lp-container">
+        <div class="lp-header reveal">
+          <span class="lp-kicker"><span class="material-icons-outlined">auto_awesome</span> Para começar</span>
+          <h2 class="lp-section-title">Um curso direto, delicado e feito para aprender no seu ritmo.</h2>
+          <p class="lp-section-copy">A Fer preparou uma jornada simples para mulheres que querem criar peças de fé com acabamento bonito e possibilidade real de venda.</p>
         </div>
-        
-        <!-- Estado de Sucesso -->
-        <div class="success-message" id="waitlist-success">
-          <span class="material-icons-outlined success-icon">verified</span>
-          <h3 class="success-title">Inscrição Confirmada!</h3>
-          <p class="success-desc">
-            Sua vaga na lista de espera exclusiva foi garantida. Agora, faça parte do nosso Grupo VIP no WhatsApp para receber novidades em primeira mão e conversar diretamente comigo!
-          </p>
-          <a href="https://api.whatsapp.com/send?phone=554699164921&text=Ol%C3%A1%2C%20Fer!%20Gostaria%20de%20entrar%20no%20grupo%20VIP%20de%20espera%20do%20M%C3%A9todo%20Ter%C3%A7os%20Lucrativos." target="_blank" class="btn btn-whatsapp" style="margin-top: 1rem; width: 100%;" id="vip-whatsapp-redirect">
-            <span class="material-icons-outlined">groups</span> Entrar no Grupo VIP do WhatsApp
-          </a>
+        <div class="lp-benefits reveal delay-1">
+          <article class="lp-benefit"><span class="material-icons-outlined">payments</span><h3>Renda extra</h3><p>Crie peças para vender em datas religiosas, batizados, presentes e encomendas personalizadas.</p></article>
+          <article class="lp-benefit"><span class="material-icons-outlined">handyman</span><h3>Passo a passo</h3><p>Entenda materiais, montagem e detalhes que deixam a peça mais bonita e segura.</p></article>
+          <article class="lp-benefit"><span class="material-icons-outlined">groups</span><h3>Suporte próximo</h3><p>A Fer acompanha as alunas no grupo, tira dúvidas e ajuda durante a jornada.</p></article>
+          <article class="lp-benefit"><span class="material-icons-outlined">favorite_border</span><h3>Hobby com sentido</h3><p>Aprenda também para criar presentes afetivos e peças religiosas especiais.</p></article>
         </div>
       </div>
-      
-      <a href="index.html" class="back-home" id="btn-back-bottom">
-        <span class="material-icons-outlined">arrow_back</span> Voltar à Página Principal
-      </a>
+    </section>
 
-    </div>
-  </section>
+    <section class="lp-section" id="conteudo">
+      <div class="lp-container">
+        <div class="lp-header reveal">
+          <span class="lp-kicker"><span class="material-icons-outlined">menu_book</span> Conteúdo</span>
+          <h2 class="lp-section-title">Os módulos reais da mentoria.</h2>
+          <p class="lp-section-copy lp-dark-copy">A estrutura segue os módulos e aulas já publicados: terço, materiais, nó franciscano, passo a passo dos modelos e bônus.</p>
+        </div>
+        <div class="lp-modules reveal delay-1">
+          <article class="lp-module"><img src="kiwi/modulso/1.png" alt="Módulo 01"><div class="lp-module-body"><small>Módulo 01</small><h3>Conhecendo o Terço</h3></div></article>
+          <article class="lp-module"><img src="kiwi/modulso/2.png" alt="Módulo 02"><div class="lp-module-body"><small>Módulo 02</small><h3>Materiais</h3></div></article>
+          <article class="lp-module"><img src="kiwi/modulso/3.png" alt="Módulo 03"><div class="lp-module-body"><small>Módulo 03</small><h3>Nó Franciscano</h3></div></article>
+          <article class="lp-module"><img src="kiwi/modulso/4.png" alt="Módulo 04"><div class="lp-module-body"><small>Módulo 04</small><h3>Passo a Passo dos Terços</h3></div></article>
+          <article class="lp-module"><img src="kiwi/modulso/5.png" alt="Bônus"><div class="lp-module-body"><small>Bônus</small><h3>Prendedores + Fornecedores</h3></div></article>
+        </div>
+        <div class="lp-lessons reveal delay-2">
+          <div class="lp-lesson"><h3>Módulo 01 - Conhecendo o Terço</h3><ul><li>Conhecendo o terço e sua estrutura</li></ul></div>
+          <div class="lp-lesson"><h3>Módulo 02 - Materiais</h3><ul><li>Materiais principais</li><li>Fios</li><li>Entremeios</li><li>Miçangas parte 1 e parte 2</li></ul></div>
+          <div class="lp-lesson"><h3>Módulo 03 - Nó Franciscano</h3><ul><li>Aula dedicada ao nó franciscano</li></ul></div>
+          <div class="lp-lesson"><h3>Módulo 04 - Passo a Passo dos Terços</h3><ul><li>Terço simples</li><li>Terço tradicional</li><li>Terço de contra pino em 4 partes</li><li>Terço de biscuit</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section class="lp-section light">
+      <div class="lp-container lp-support">
+        <div class="lp-support-img reveal"><img src="kiwi/area de membros TL.png" alt="Área de membros do Método Terços Lucrativos"></div>
+        <div class="lp-support-text reveal delay-1">
+          <span class="lp-kicker"><span class="material-icons-outlined">verified</span> Acompanhamento</span>
+          <h2 class="lp-section-title">Você não compra e fica sozinha.</h2>
+          <p>A própria Fer atende as alunas no grupo de suporte, tira dúvidas, acompanha o progresso e ajuda no que for preciso.</p>
+          <p>É uma mentoria com cuidado, feita para quem quer aprender com calma e transformar esse conhecimento em prática.</p>
+          <a href="https://pay.kiwify.com.br/PGA4mul" target="_blank" rel="noopener" class="btn btn-primary"><span class="material-icons-outlined">lock_open</span> Entrar por R$ 39,90</a>
+        </div>
+      </div>
+    </section>
 
-  <!-- --- FOOTER --- -->
+    
+    <section class="lp-gallery-band lp-gallery-lower" aria-label="Mais fotos de terços e peças religiosas">
+      <div class="lp-marquee reverse">
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.11 (1).jpeg" alt="Lembrancinha religiosa"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.09 (1).jpeg" alt="Prendedor artesanal"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.10.jpeg" alt="Terço infantil"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.08 (1).jpeg" alt="Terço de parede"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.09 (3).jpeg" alt="Peça religiosa personalizada"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.40.46 (1).jpeg" alt="Rosário prateado"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.11 (1).jpeg" alt="Lembrancinha religiosa"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.09 (1).jpeg" alt="Prendedor artesanal"></div>
+      </div>
+    </section>
+    <section class="lp-section light" style="background: var(--bg-light-secondary);">
+      <div class="lp-container">
+        <div class="lp-header reveal">
+          <span class="lp-kicker"><span class="material-icons-outlined">redeem</span> Bônus</span>
+          <h2 class="lp-section-title">Aulas extras para ampliar suas possibilidades.</h2>
+        </div>
+        <div class="lp-bonuses reveal delay-1">
+          <article class="lp-bonus"><h3>Prendedor de chupeta sofisticado</h3><p>Modelo delicado para diversificar suas peças e criar opções mais elaboradas.</p></article>
+          <article class="lp-bonus"><h3>Prendedor de chupeta simples</h3><p>Uma opção prática para treinar, vender e atender pedidos do dia a dia.</p></article>
+          <article class="lp-bonus"><h3>Lista de fornecedores</h3><p>Referência para encontrar materiais e continuar produzindo depois das aulas.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section">
+      <div class="lp-container">
+        <div class="lp-final reveal">
+          <span class="lp-pill"><span class="material-icons-outlined">local_fire_department</span> Valor de lançamento</span>
+          <h2 class="lp-section-title">Garanta seu acesso hoje.</h2>
+          <div class="lp-price"><small>Curso completo</small><strong>R$ 39,90</strong></div>
+          <p class="lp-copy" style="margin-left: auto; margin-right: auto;">Entre no curso, acesse as aulas e venha para o grupo de suporte das alunas da Fer.</p>
+          <a href="https://pay.kiwify.com.br/PGA4mul" target="_blank" rel="noopener" class="btn btn-primary"><span class="material-icons-outlined">shopping_cart_checkout</span> Comprar pela Kiwify</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer-main" style="padding: 3rem 0; text-align: center;">
-    <p style="font-size: 0.75rem; color: var(--text-secondary);">&copy; 2026 Mimos da Fer. Todos os direitos reservados. Método Terços Lucrativos.</p>
+    <p style="font-size: 0.75rem; color: var(--text-on-dark-sub);">&copy; 2026 Mimos da Fer. Todos os direitos reservados. Método Terços Lucrativos.</p>
   </footer>
-
-  <!-- --- DOBRA PRETA FINA (AGÊNCIA) --- -->
-  <div class="developer-footer">
-    <p>Site produzido por <a href="http://notoriosaber.online/" target="_blank" rel="noopener">Agência Notório Saber</a></p>
-  </div>
-
-  <!-- Reutiliza a lógica de scroll reveal e transições básicas -->
+  <div class="developer-footer"><p>Site produzido por <a href="http://notoriosaber.online/" target="_blank" rel="noopener">Agência Notório Saber</a></p></div>
+  <div class="lp-sticky"><a href="https://pay.kiwify.com.br/PGA4mul" target="_blank" rel="noopener" class="btn btn-primary"><span class="material-icons-outlined">shopping_bag</span> Comprar por R$ 39,90</a></div>
   <script src="script.js"></script>
-  <script>
-    // Comportamento interativo exclusivo da lista de espera
-    document.getElementById('course-waitlist-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Coleta dados e simula envio com micro-animação
-      const name = document.getElementById('user-name').value;
-      const email = document.getElementById('user-email').value;
-      const phone = document.getElementById('user-phone').value;
-      
-      // Armazena localmente para simular banco de dados da lista
-      const lead = { name, email, phone, timestamp: new Date().toISOString() };
-      localStorage.setItem('lead_mtl_' + Date.now(), JSON.stringify(lead));
-      
-      // Transição suave para o estado de sucesso
-      const formWrapper = document.getElementById('waitlist-form-wrapper');
-      const successWrapper = document.getElementById('waitlist-success');
-      
-      formWrapper.style.transition = 'opacity 0.4s ease';
-      formWrapper.style.opacity = '0';
-      
-      setTimeout(() => {
-        formWrapper.style.display = 'none';
-        successWrapper.style.display = 'flex';
-      }, 400);
-    });
-  </script>
 </body>
 </html>
