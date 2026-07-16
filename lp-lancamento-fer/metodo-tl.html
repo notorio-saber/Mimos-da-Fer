@@ -683,6 +683,16 @@
     @keyframes lpMarqueeLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     @keyframes lpMarqueeRight { from { transform: translateX(-50%); } to { transform: translateX(0); } }
     @media (max-width: 760px) { .lp-gallery-head { display: block; } .lp-gallery-head p { margin-top: 0.75rem; } .lp-rosary-carousel { height: 360px; } }
+
+    .lp-gallery-band.lp-gallery-lower {
+      background: var(--bg-light-primary);
+      border-top: 1px solid rgba(198, 99, 119, 0.12);
+      border-bottom: 1px solid rgba(198, 99, 119, 0.12);
+    }
+
+    .lp-gallery-band.lp-gallery-lower .lp-marquee {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body>
@@ -732,10 +742,6 @@
     
     
     <section class="lp-gallery-band" aria-label="Galeria de terços">
-      <div class="lp-gallery-head">
-        <h2>Uma página de terços precisa mostrar terços.</h2>
-        <p>Peças reais da Mimos da Fer para conectar o curso ao resultado que a aluna vai aprender a criar.</p>
-      </div>
       <div class="lp-marquee">
         <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.07.jpeg" alt="Terço artesanal"></div>
         <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.08.jpeg" alt="Terço de devoção"></div>
@@ -746,16 +752,7 @@
         <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.07.jpeg" alt="Terço artesanal"></div>
         <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.08.jpeg" alt="Terço de devoção"></div>
       </div>
-      <div class="lp-marquee reverse">
-        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.11 (1).jpeg" alt="Lembrancinha religiosa"></div>
-        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.09 (1).jpeg" alt="Prendedor artesanal"></div>
-        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.10.jpeg" alt="Terço infantil"></div>
-        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.08 (1).jpeg" alt="Terço de parede"></div>
-        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.09 (3).jpeg" alt="Peça religiosa personalizada"></div>
-        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.40.46 (1).jpeg" alt="Rosário prateado"></div>
-        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.11 (1).jpeg" alt="Lembrancinha religiosa"></div>
-        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.09 (1).jpeg" alt="Prendedor artesanal"></div>
-      </div>
+      
     </section>
     <section class="lp-intro-band">
       <div class="lp-container">
@@ -813,6 +810,19 @@
       </div>
     </section>
 
+    
+    <section class="lp-gallery-band lp-gallery-lower" aria-label="Mais fotos de terços e peças religiosas">
+      <div class="lp-marquee reverse">
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.11 (1).jpeg" alt="Lembrancinha religiosa"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.09 (1).jpeg" alt="Prendedor artesanal"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.10.jpeg" alt="Terço infantil"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.08 (1).jpeg" alt="Terço de parede"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.09 (3).jpeg" alt="Peça religiosa personalizada"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.40.46 (1).jpeg" alt="Rosário prateado"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.11 (1).jpeg" alt="Lembrancinha religiosa"></div>
+        <div class="lp-marquee-item"><img src="fotos terços/WhatsApp Image 2026-05-26 at 15.38.09 (1).jpeg" alt="Prendedor artesanal"></div>
+      </div>
+    </section>
     <section class="lp-section light" style="background: var(--bg-light-secondary);">
       <div class="lp-container">
         <div class="lp-header reveal">
